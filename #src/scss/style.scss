@@ -1,0 +1,524 @@
+// Импорт файлов <================================================================================>
+
+@import '_nullstyle.scss';
+@import '_fonts';
+@import '_mixins.scss';
+
+// Переменные <================================================================================>
+
+$maxWidth: 1150;
+
+$md2: 767px;
+
+// Основные <================================================================================>
+
+@import '_ui.scss';
+
+body{
+
+}
+
+// Header <================================================================================>
+
+@import '_header.scss';
+
+// Верстка содержимого <================================================================================>
+
+
+.block-one {
+	padding: 0px 0px 79px 0px;
+	margin: 113px 0px 0px 0px;
+	// .block-one__wrap
+	&__wrap {
+		display: flex;
+		align-items: center;
+	}
+	// .block-one__img
+	&__img {
+		@media (max-width:$md2){
+			display: none;
+		}
+	}
+	// .block-one__row
+	&__row {
+		display: flex;
+		flex-wrap: wrap;
+
+		margin: 0px 0px 0px 103+20px;
+		text-align: center;
+		@media (max-width:986px){
+			display: block;
+		}
+		@media (max-width:$md2){
+			margin: 0;
+		}
+	}
+	// .block-one__column
+	&__column {
+		flex: 1 1 251px;
+		margin: 59px 0px 0px 0px;
+		@media (max-width:986px){
+			flex: 1 1 50%;
+			width: 100%;
+			margin-top: 20px;
+		}
+		@media (min-width: 986px){
+			// display: flex;
+			min-height: 323px;
+			&:nth-child(odd){
+				margin: 0px 59px 0px 0px;
+			}
+		}
+		@media (max-width:$md2){
+			flex: 1 1 50%;
+		}
+		// .block-one__column_1
+		&_1 {
+		}
+		// .block-one__column_2
+		&_2 {
+			@media (min-width:986px){
+				position: relative;
+				top: 69px
+			}
+		}
+		// .block-one__column_3
+		&_3 {
+			position: relative;
+			left: -69px;
+			// top: 59px;
+			@media (max-width:986px){
+				position: static;
+			}
+		}
+		// .block-one__column_4
+		&_4 {
+			position: relative;
+			left: -69px;
+			top: 59px;
+			@media (max-width:986px){
+				position: static;
+			}
+		}
+	}
+}
+
+.column-block-one {
+	background-color: #ffffff;
+	box-shadow: 0px 6px 9px 0px rgba(35,38,47,0.1);
+
+	padding: 61px 27px 41px 30px;
+
+	// .column-block-one__img
+	&__img {}
+	// .column-block-one__title
+	&__title {
+		font-size: 14px;
+		line-height: 15px;
+		font-weight: 600;
+		color: #233148;
+
+		margin: 34px 0px 0px 0px;
+	}
+	// .column-block-one__text
+	&__text {
+		font-size: 14px;
+		line-height: 24px;
+		color: #6a6d89;
+
+		margin: 18px 0px 0px 0px;
+
+	}
+}
+
+// Верстка содержимого <================================================================================>
+
+
+.tabs {
+	padding: 85px 0px 110px 0px;
+	background-color: #fff;
+	// .tabs__row
+	&__row {
+		display: flex;
+		justify-content: space-between;
+		@media (max-width:688px){
+			display: block;
+		}
+	}
+	// .tabs__nav
+	&__nav {
+		order: 2;
+		flex: 0 1 543px;
+		margin: 0px 0px 0px 20px;
+		@media (max-width:688px){
+			display: flex;	
+			flex-wrap: wrap;
+
+			margin: 0 -5px;
+		}
+	}
+	// .tabs__content
+	&__content {
+		order: 1;
+		flex: 0 1 459px;
+		@media (max-width:688px){
+			margin: 30px 0px 0px 0px;
+		}
+	}
+}
+
+.tabs-nav {
+	// .tabs-nav__item
+	&__item {
+		display: flex;
+		align-items: center;
+
+		cursor: pointer;
+		box-shadow: 0px 6px 9px 0px rgba(35,38,47,0.1);
+		min-height: 79px;
+		padding: 0px 0px 0px 32px;
+
+		transition: all 0.3s ease 0s;
+		&:first-child{
+			margin: 0;
+		}
+		&:hover{
+			box-shadow: 0px 11px 13px 0px rgba(35,38,47,0.1);
+		}
+		&.is-active{
+			transition: all 0.3s ease;
+			background-color: #33d2fd;
+			box-shadow: 0px 6px 9px 0px rgba(35,38,47,0.1);
+		}
+		@media (max-width:688px){
+			display: flex;
+			flex-direction: column;
+			padding: 10px;
+			flex: 0 0 25%;
+
+		}
+		@media (max-width:580px){
+			flex: 1 0 50%;
+		}
+		@media (min-width:688px){
+			margin: 19px 0px 0px 0px;
+		}
+	}
+	// .tabs-nav__img
+	&__img {
+		width: 30px;
+		@media (max-width:688px){
+			flex: 1 1 auto;
+		}
+	}
+	// .tabs-nav__title
+	&__title {
+		margin: 0px 0px 0px 20px;
+		font-size: 15px;
+		line-height: 27px;
+		font-weight: 600;
+		color: #233148;
+		@media (max-width:688px){
+			margin: 0;
+			text-align: center;
+		}
+	}
+}
+
+.tab {
+	display: none;
+	&.is-active{
+		display: block;
+		text-align: right;
+	}
+	// .tab__title
+	&__title {
+		font-size: 30px;
+		font-weight: 700;
+		color: #233148;
+	}
+	// .tab__text
+	&__text {
+		font-size: 14px;
+		line-height: 27px;
+		color: #6a6d89;
+		margin: 48px 0px 0px 0px;
+	}
+	// .tab__link
+	&__link {}
+}
+
+
+// Верстка содержимого <================================================================================>
+
+
+
+.block-three {
+	padding: 32px 0px 82px 0px;
+	// .block-three__row
+	&__row {
+		display: flex;
+		justify-content: space-between;
+	}
+	// .block-three__img
+	&__img {
+		@media (max-width:850px){
+			display: none;
+		}
+		@media (min-width:850px){
+			img{
+				max-width: 100%;
+			}
+		}
+	}
+	// .block-three__content
+	&__content {
+		max-width: 458px;
+		margin: 0px 0px 0px 20px;
+		@media (max-width:850px){
+			max-width: 100%;
+			margin: 0;
+		}
+	}
+	// .block-three__title
+	&__title {
+		font-size: 30px;
+		line-height: 27px;
+		font-weight: 700;
+		color: #233148;
+
+		margin: 38px 0px 0px 0px;
+		@media (max-width:400px){
+			font-size: 27px;
+		}
+	}
+	// .block-three__list
+	&__list {
+		margin: 35px 0px 0px 0px;
+		li{
+			position: relative;
+			padding: 0px 0px 0px 30px;
+
+			font-size: 15px;
+			font-weight: 600;
+			&:last-child{
+				margin: 20px 0px 0px 0px;
+			}
+			color: #233148;
+			&::before{
+				content: url('../img/block_3/list_checkmarks.png');
+				position: absolute;
+				top: 0;
+				left: 0;
+
+				display: flex;
+				align-items: center;
+				justify-content: center;
+
+				width: 15px;
+				height: 15px;
+
+				background-color: #33d2fd;
+				border-radius: 50%;
+				padding: 0px 1px 0px 0px;
+			}
+			@media (max-width:850px){
+				margin: 0;
+			}
+		}
+	}
+	// .block-three__text
+	&__text {
+		font-size: 14px;
+		line-height: 24px;
+		color: #6a6d89;
+
+		margin: 38px 0px 0px 0px;
+	}
+}
+
+// Верстка содержимого <================================================================================>
+
+.block-4 {
+	background: url("../img/pattern-2_bg.png") 0 0/cover no-repeat;
+	@include adaptiv-paddingTop(111, 30);
+	@include adaptiv-paddingBottom(95, 30);
+	// .block-4__row
+	&__row {
+		display: flex;
+		align-items: center;
+	}
+	// .block-4__img
+	&__img {
+		@media (max-width:$md2){
+			display: none;
+		}
+	}
+	// .block-4__content
+	&__content {
+		@media (min-width:$md2){
+			@include adaptiv-marginLeft(169, 30);
+		}
+	}
+	// .block-4__title
+	&__title {
+		max-width: 445px;
+
+		font-size: 30px;
+		line-height: 60px;
+		font-weight: 700;
+		color: #233148;
+	}
+	// .block-4__text
+	&__text {
+		max-width: 445px;
+
+		font-size: 14px;
+		line-height: 27px;
+	}
+	// .block-4__links
+	&__links {
+		max-width: 367px;
+		margin: 39px 0px 0px 0px;
+		@include adaptiv-marginTop(39, 15);
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+	}
+	// .block-4__link
+	&__link {
+		// .block-4__link_1
+		&_1 {
+		}
+		// .block-4__link_2
+		&_2 {
+			@media (max-width:350px){
+				margin: 10px 0px 0px 0px;
+			}
+		}
+	}
+}
+
+// Верстка содержимого <================================================================================>
+
+.block-5 {
+	padding: 146px 0px 86px 0px;
+	// .block-5__container
+	&__container {
+		max-width: 725px;
+		margin: 0 auto;
+		padding: 0px 10px;
+	}
+
+	// .block-5__row
+	&__row {
+		display: flex;
+		flex-wrap: wrap;
+	}
+	// .block-5__item
+	&__item {
+		flex: 1 1 25%;
+		@media (max-width:560px){
+			flex: 1 1 33.333%;
+			&:nth-child(4){
+				margin: 30px 0px 0px 0px;
+			}
+		}
+		@media (max-width:420px){
+			flex: 1 1 50%;
+			&:nth-child(3n){
+				margin: 30px 0px 0px 0px;
+			}
+		}
+	}
+	// .block-5__item-title
+	&__item-title {
+		font-size: 15px;
+		font-weight: 600;
+		color: #233148;
+	}
+	// .block-5__list
+	&__list {
+		margin: 31px 0px 0px 0px;
+	}
+	// .block-5__point
+	&__point {
+		line-height: 27px;
+
+		margin: 18px 0px 0px 0px;
+		transition: all 0.3s ease 0s;
+		&:hover{
+			text-decoration: underline;
+			text-decoration-color: #6a6d89;
+		}
+		&:first-child{
+			margin: 0;
+		}
+		a{
+			color: #6a6d89;
+		}
+	}
+	// .block-5__title
+	&__title {
+		font-size: 30px;
+		line-height: 60px;
+		font-weight: 600;
+		color: #233148;
+
+		text-align: center;
+		margin: 104px 0px 0px 0px;
+	}
+	// .block-5__text
+	&__text {
+		line-height: 27px;
+		color: #6a6d89;
+
+		text-align: center;
+		margin: 22px 0px 0px 0px;
+	}
+	// .block-5__form
+	&__form {
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+		margin: 68px 0px 0px 0px;
+	}
+	// .block-5__input-text
+	&__input-text {
+		height: 51px;
+		flex: 1 1 auto;
+		background-color: #f6f7fb;
+
+		font-family: inherit;
+		font-size: 14px;
+		line-height: 27px;
+		color: #6a6d89;
+
+		padding: 0px 20px;
+		@media (max-width:593px){
+			flex: 0 0 100%;
+		}
+	}
+	// .block-5__button
+	&__button {
+		height: 51px;
+		background-color: #33d2fd;
+		font-size: 15px;
+		line-height: 27px;
+		font-weight: 600;
+		color: #233148;
+
+		padding: 0px 32px 0px 40px;
+		margin: 0px 0px 0px 30px;
+		@media (max-width:593px){
+			margin: 15px 0px 0px 0px;
+		}
+	}
+}
+
+
+// Верстка "footer" <================================================================================>
+
+@import '_footer.scss';
+
+
